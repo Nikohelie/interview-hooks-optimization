@@ -1,0 +1,16 @@
+.watchlist {
+    width: 300px;
+    margin: 15px 0;
+  
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    
+    &.render {
+      transition: all 600ms ease-out;
+      border: 4px dashed orange;
+    }
+  }

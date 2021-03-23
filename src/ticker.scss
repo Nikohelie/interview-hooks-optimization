@@ -1,0 +1,41 @@
+.ticker {
+    width: 125px;
+    height: 125px;
+    background-color: #25303d;
+    float: left;
+    margin: 10px;
+    position: relative;
+    
+    &.render {
+      transition: all 600ms ease-out;
+      background-color: black;
+      border: 4px dashed orange;
+    }
+  
+    .ticker-name {
+      font-size: 15px;
+      color: #ffc310;
+      text-align: center;
+      margin: 40px auto 5px auto;
+    }
+  
+    .ticker-price {
+      color:  #61cdca;
+      text-align: center;
+    }
+    .ticker-counter-render {
+        color: #E5421A;
+        text-align: center;
+    }
+  
+    i.delete {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: #6f6f6f;
+      cursor: pointer;
+    }
+  }
+  
+  
+  
