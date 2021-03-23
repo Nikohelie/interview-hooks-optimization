@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Watchlist from "./WatchList";
-// import Watchlist from "./WatchListOptimize";
 
 import "./index.scss";
 import { logger } from "./utils/logger";
