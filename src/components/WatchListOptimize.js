@@ -1,8 +1,7 @@
 import React, { useCallback } from "react";
 import { useState, useRef } from "react";
 import "./watchList.scss";
-// import Ticker from "./Ticker";
-import Ticker from "./MemoizeTicker";
+import Ticker from "./components/MemoizeTicker";
 import { logger } from "./utils/logger";
 
 export default function Watchlist() {

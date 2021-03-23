@@ -1,11 +1,11 @@
 import React from "react";
 import { useRef } from "react";
-import stockPriceService from "./stockPriceService";
+import stockPriceService from "../utils/stockPriceService";
 import "./ticker.scss";
-import { logger } from "./utils/logger";
-import useRenderCounter from "./utils/hooks/useRenderCounter";
+import { logger } from "../utils/logger";
+import useRenderCounter from "../utils/hooks/useRenderCounter";
 
-export default function Ticker(props) {
+export default React.memo(function Ticker(props) {
   const { ticker, onRemove } = props;
   const renderCount = useRenderCounter();
   const currentPrice = stockPriceService.fetchPricesForTicker(ticker);
@@ -39,4 +39,4 @@ export default function Ticker(props) {
       </div>
     </div>
   );
-}
+});
