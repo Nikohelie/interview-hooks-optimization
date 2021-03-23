@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState, useRef } from "react";
 import "./watchList.scss";
 // import Ticker from "./Ticker";
@@ -23,15 +23,29 @@ export default function Watchlist() {
     }, 1000);
   }, 50);
 
-  const onRemove = (tickerToRemove) => {
+  // const onRemove = useCallback(
+  //   (tickerToRemove) => {
+  //     logger.info(
+  //       "WatchlistComponent",
+  //       `[user action] - remove ticker (${tickerToRemove})`
+  //     );
+  //     logger.info("WatchlistComponent", `setWatchlist`, "useState");
+
+  //     setWatchlist(watchlist.filter((ticker) => ticker !== tickerToRemove));
+  //   },
+  //   [watchlist]
+  // );
+
+  const onRemove = useCallback((tickerToRemove) => {
     logger.info(
       "WatchlistComponent",
       `[user action] - remove ticker (${tickerToRemove})`
     );
-    logger.info("WatchlistComponent", `setWatchlist`, "useState");
 
-    setWatchlist(watchlist.filter((ticker) => ticker !== tickerToRemove));
-  };
+    setWatchlist((watchlist) =>
+      watchlist.filter((ticker) => ticker !== tickerToRemove)
+    );
+  }, []);
 
   return (
     <div className="watchlist" ref={componentRef}>

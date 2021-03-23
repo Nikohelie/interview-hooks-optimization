@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Watchlist from "./WatchList";
+// import Watchlist from "./WatchListOptimize";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import "./index.scss";
+import { logger } from "./utils/logger";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const rootElement = document.getElementById("root");
+
+window.mount = () => {
+  logger.clear();
+  logger.info("Index", "Mounting Ticker Component");
+  document.getElementById("btnMount").disabled = true;
+  document.getElementById("btnUnmount").disabled = false;
+  ReactDOM.render(<Watchlist />, rootElement);
+};
+
+window.unmount = () => {
+  logger.clear();
+  logger.info("Index", "Unmounting Ticker Component");
+  document.getElementById("btnMount").disabled = false;
+  document.getElementById("btnUnmount").disabled = true;
+  ReactDOM.unmountComponentAtNode(rootElement);
+};
