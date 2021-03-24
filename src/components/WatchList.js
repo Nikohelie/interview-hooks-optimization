@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import "./watchList.scss";
 import Ticker from "./Ticker";
-import { logger } from "./utils/logger";
+import { logger } from "../utils/logger";
 
 export default function Watchlist() {
   const [watchlist, setWatchlist] = useState(["AAPL", "FB", "MSFT", "NFLX"]);
